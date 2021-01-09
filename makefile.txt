@@ -1,0 +1,13 @@
+CC=gcc
+
+.SUFFIXES: .x
+
+.PHONY : clean
+
+clean:
+	rm -f *.o *.x core.*
+
+%.x : %.c
+	$(CC) -o $@ $<
+%.x : %.cpp
+	$(CXX) -o $@ $<
